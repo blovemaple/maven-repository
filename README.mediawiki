@@ -1,15 +1,55 @@
+==Introduction==
 My personal maven repository.
 
-Config in pom.xml:
+==How to deploy an artifact into this repository==
+*Have a local copy of this repository as a Git project.
+*Have distribution config below in the pom.xml of projects to be deployed.
  <distributionManagement>
   <repository>
-    <id>blove-git-releases</id>
-    <name>Blove's Release Repository on GitHub</name>
-    <url>https://raw.github.com/blovemaple/maven-repository/master/releases</url>
+   <id>blove-git-releases</id>
+   <name>Blove's Release Repository on GitHub</name>
+   <url>file://<LOCAL_DIR_OF_REPOSITORY_PROJECT>/releases</url>
   </repository>
   <snapshotRepository>
-    <id>blove-git-snapshots</id>
-    <name>Blove's Release Repository on GitHub</name>
-    <url>https://raw.github.com/blovemaple/maven-repository/master/snapshots</url>
+   <id>blove-git-snapshots</id>
+   <name>Blove's Snapshot Repository on GitHub</name>
+   <url>file://<LOCAL_DIR_OF_REPOSITORY_PROJECT>/snapshots</url>
   </snapshotRepository>
  </distributionManagement>
+*maven deploy!
+*Commit the local repository project and push it onto GitHub.
+
+==How to use artifacts in this repository==
+*Have repositories config below in the pom.xml of projects depending on artifacts in this repository
+ <repositories>
+  <repository>
+   <id>blove-git-releases</id>
+   <name>Blove's Release Repository on GitHub</name>
+   <url>https://github.com/blovemaple/maven-repository/raw/master/releases</url>
+   <releases>
+    <enabled>true</enabled>
+   </releases>
+   <snapshots>
+    <enabled>false</enabled>
+   </snapshots>
+  </repository>
+  <repository>
+   <id>blove-git-snapshots</id>
+   <name>Blove's Snapshot Repository on GitHub</name>
+   <url>https://github.com/blovemaple/maven-repository/raw/master/snapshots</url>
+   <releases>
+    <enabled>false</enabled>
+   </releases>
+   <snapshots>
+    <enabled>true</enabled>
+   </snapshots>
+  </repository>
+ </repositories>
+*Config dependencies referencing artifacts in this repository in the pom.xml
+ <dependencies>
+  <dependency>
+   <groupId>xxx</groupId>
+   <artifactId>xxx</artifactId>
+   <version>xxx</version>
+  </dependency>
+ </dependencies>
