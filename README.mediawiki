@@ -1,0 +1,15 @@
+My personal maven repository.
+
+Config in pom.xml:
+ <distributionManagement>
+  <repository>
+    <id>blove-git-releases</id>
+    <name>Blove's Release Repository on GitHub</name>
+    <url>https://raw.github.com/blovemaple/maven-repository/master/releases</url>
+  </repository>
+  <snapshotRepository>
+    <id>blove-git-snapshots</id>
+    <name>Blove's Release Repository on GitHub</name>
+    <url>https://raw.github.com/blovemaple/maven-repository/master/snapshots</url>
+  </snapshotRepository>
+ </distributionManagement>
