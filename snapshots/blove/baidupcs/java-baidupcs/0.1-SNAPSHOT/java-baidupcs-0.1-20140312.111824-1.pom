@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>blove.baidupcs</groupId>
-	<artifactId>baidupcs</artifactId>
-	<version>0.1</version>
+	<artifactId>java-baidupcs</artifactId>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>baidupcs</name>
@@ -18,12 +18,20 @@
 		<dependency>
 			<groupId>com.squareup.retrofit</groupId>
 			<artifactId>retrofit</artifactId>
-			<version>1.2.2</version>
+			<version>1.4.1</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
 				<executions>
@@ -67,12 +75,14 @@
 		<repository>
 			<id>blove-git-releases</id>
 			<name>Blove's Release Repository on GitHub</name>
-			<url>file:///home/blove/Programing/git/maven-repository/releases</url>
+			<!-- local dir -->
+			<url>file:///D:\git\maven-repository\releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>blove-git-snapshots</id>
 			<name>Blove's Snapshot Repository on GitHub</name>
-			<url>file:///home/blove/Programing/git/maven-repository/snapshots</url>
+			<!-- local dir -->
+			<url>file:///D:\git\maven-repository\snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>

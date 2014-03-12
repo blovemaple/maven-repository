@@ -3,7 +3,7 @@ My personal maven repository.
 
 ==What's inside?==
 *blockstorageapi:[https://github.com/blovemaple/blockstorageapi]
-*baidupcs:[https://github.com/blovemaple/baidupcs-java]
+*java-baidupcs:[https://github.com/blovemaple/java-baidupcs]
 
 ==How to use artifacts in this repository==
 *Have repositories config below in the pom.xml of projects depending on artifacts in this repository
